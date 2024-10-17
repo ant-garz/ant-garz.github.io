@@ -19,12 +19,7 @@ const config = {
 		}),
 		paths: {
 			base: process.env.BASE_PATH || ''
-		},
-		prerender: {
-			// Configure your prerendering options here
-			// For example, you can specify routes to prerender
-			entries: ['*'], // Prerender all routes
-		},
+		}
 	}
 };
 
