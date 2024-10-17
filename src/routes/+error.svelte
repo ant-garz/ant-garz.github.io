@@ -4,7 +4,10 @@
 </script>
 
 <Nav></Nav>
-<h1>{$page.status}: {$page?.error?.message}</h1>
+<div class="position-absolute top-50 start-50 translate-middle">
+	<h1 class="text-center">{$page.status}: {$page?.error?.message} <i class="bi bi-x-circle"></i></h1>
+
+</div>
 
 <style>
     @import "../style.css";
