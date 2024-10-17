@@ -18,7 +18,7 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: "build/"
+			base: process.argv.includes('dev') ? 'build' : process.env.BASE_PATH
 		}
 	}
 };
