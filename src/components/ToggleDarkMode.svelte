@@ -37,11 +37,11 @@ function toggle() {
 </script>
 {#if darkMode === true}
     <Button on:click={toggle}
-    class="btn btn-dark"
+    class=""
     active={false}
     block={false}
     close={false}
-    color="dark"
+    color="secondary"
     disabled={false}
     href=""
     outline={false}
@@ -53,11 +53,11 @@ function toggle() {
     </Button>
 {:else}
     <Button on:click={toggle}
-    class="btn btn-light"
+    class=""
     active={false}
     block={false}
     close={false}
-    color="light"
+    color="warning"
     disabled={false}
     href=""
     outline={false}
