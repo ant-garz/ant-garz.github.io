@@ -9,8 +9,6 @@ let darkMode = false;
 onMount(() => {
   const storedValue = localStorage.getItem('dark-mode');
   if (storedValue) {
-    // Do something with the value
-    console.log('Value from localStorage:', storedValue);
     if(!document.body.classList.contains("dark-mode") && storedValue === "1"){
         console.log('dark mode')
         document.body.classList.add('dark-mode');
