@@ -24,10 +24,10 @@
 	<NavbarBrand href="{base}/"><Icon name="robot" class="h1"/> Portfolio</NavbarBrand>
 	<NavbarToggler on:click={() => (isOpen = !isOpen)} />
 	<Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
-	  <Nav  theme="auto"  class="ms-auto" navbar>
+	  <Nav  theme="auto"  class="ms-auto d-flex" navbar>
 		<NavItem><NavLink href="{base}/">Home</NavLink></NavItem>
 		<NavItem><NavLink href="{base}/projects">Projects</NavLink></NavItem>
-		<ToggleDarkMode />
+		<NavItem><ToggleDarkMode /></NavItem>
 	  </Nav>
 	</Collapse>
   </Navbar>

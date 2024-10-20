@@ -33,9 +33,10 @@ function toggle() {
 }
 
 </script>
+
 {#if darkMode === true}
     <Button on:click={toggle}
-    class=""
+    class="mx-auto p-2"
     active={false}
     block={false}
     close={false}
@@ -51,7 +52,7 @@ function toggle() {
     </Button>
 {:else}
     <Button on:click={toggle}
-    class=""
+    class="mx-auto p-2"
     active={false}
     block={false}
     close={false}
