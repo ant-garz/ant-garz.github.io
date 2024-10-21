@@ -1,5 +1,6 @@
 <script lang="ts">
     import { Icon, Carousel, CarouselControl, CarouselItem, CarouselIndicators } from "@sveltestrap/sveltestrap";
+    import { onMount } from 'svelte';
     import Nav from "../components/Nav.svelte";
     import MediaQuery from "../components/MediaQuery.svelte";
     import photo1 from '$lib/assets/photo1.jpg';
@@ -21,15 +22,26 @@
         photo7
     ];
     let activeIndex = 0;
+    let darkMode = false;
+    onMount(() => {
+        const storedValue = localStorage.getItem('dark-mode');
+        if (storedValue && storedValue === "1") {
+            if(!document.body.classList.contains("dark-mode") && storedValue === "1"){
+                document.body.classList.add('dark-mode');
+                // since we add this here and we toggle this here
+                darkMode = true;
+            }
+        }
+    });
+
 </script>
 
 <Nav></Nav>
 
-<container>
-    <h1 class="mx-auto px-5 mt-3">Hello <Icon name="triangle-half" /></h1>
+<container theme="auto">
+    <h1 class="mx-auto px-5 mt-3">Hello, my name is Anthony Garza <Icon name="triangle-half" /></h1>
     <section class="mx-auto p-5">
         <h2>Professional Background</h2>
-        <p>My name is Anthony Garza.</p>
         <p>With professional experience as both a Software QA Analyst and a Software Developer, I bring hands-on knowledge of agile methodologies and the software development life cycle.</p>
         <p>Outside of work, my passion for technology continues to drive me to learn more. I enjoy working on personal projects with Arduino micro controllers and Raspberry Pi computers, which helps me stay enthusiastic about my field and current with emerging technologies.</p>
 

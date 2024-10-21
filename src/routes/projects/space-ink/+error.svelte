@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Nav from "../components/Nav.svelte";
+	import Nav from "../../../components/Nav.svelte";
 	import { onMount } from 'svelte';
     
     let darkMode = false;
@@ -17,6 +17,7 @@
 </script>
 
 <Nav></Nav>
+
 <container theme="auto">
 	<div class="position-absolute top-50 start-50 translate-middle">
 		<h1 class="text-center">{$page.status}: {$page?.error?.message} <i class="bi bi-x-circle"></i></h1>
@@ -24,5 +25,5 @@
 </container>
 
 <style>
-    @import "../style.css";
+    @import "../../style.css";
 </style>
