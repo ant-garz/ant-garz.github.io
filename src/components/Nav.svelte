@@ -20,7 +20,7 @@
 
   </script>
   
-  <Navbar   color="dark" theme="dark" expand="md" container="fluid">
+  <Navbar   color="dark" theme="dark" expand="md" container="fluid" fixed="top">
 	<NavbarBrand href="{base}/"><Icon name="robot" class="h1"/> Portfolio</NavbarBrand>
 	<NavbarToggler on:click={() => (isOpen = !isOpen)} />
 	<Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>

@@ -7,3 +7,11 @@
     background-color: #1d3040;
     color: #bfc2c7;
 }
+
+:global(body) a {
+    color: black;
+  }
+
+  :global(body.dark-mode) a {
+    color: #bfc2c7;
+}
