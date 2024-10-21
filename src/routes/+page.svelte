@@ -42,8 +42,8 @@
         <h3>Stay Connected</h3>
         <div class="mx-auto px-5 mt-3">
             <p class="h4 mt-4"><a href={resume} target="_blank" rel="noopener noreferrer"><Icon name="file-earmark-text-fill" /> View My Resume</a></p>
-            <p class="h4 mt-4"><a href="www.linkedin.com/in/anthony-garza" target="_blank"><Icon name="linkedin" /> Linkedin Profile</a></p>
-            <p class="h4 mt-4"><a href="https://github.com/ant-garz" target="_blank"><Icon name="github" /> Github Profile</a></p>
+            <p class="h4 mt-4"><a rel=external href={"www.linkedin.com/in/anthony-garza"} target="_blank"><Icon name="linkedin" /> Linkedin Profile</a></p>
+            <p class="h4 mt-4"><a rel=external href={"https://github.com/ant-garz"} target="_blank"><Icon name="github" /> Github Profile</a></p>
         </div>
     </section>
 
