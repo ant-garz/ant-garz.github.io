@@ -16,10 +16,7 @@ const config = {
 			precompress: false,
 			strict: true,
 			fallback: '404.html'
-		}),
-		paths: {
-			base: process.env.BASE_PATH || ''
-		}
+		})
 	}
 };
 
