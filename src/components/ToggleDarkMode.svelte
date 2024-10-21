@@ -2,39 +2,30 @@
 
 import { onMount } from 'svelte';
 import { Button } from '@sveltestrap/sveltestrap';
+import { theme } from '../utilities/themeStore';
 
 
-let darkMode = false;
+let currentTheme: string;
 
-onMount(() => {
-  const storedValue = localStorage.getItem('dark-mode');
-  if (storedValue) {
-    if(!document.body.classList.contains("dark-mode") && storedValue === "1"){
-        document.body.classList.add('dark-mode');
-        // since we add this here and we toggle this here
-        darkMode = true;
-    }else{
-        darkMode = true;
-    }
-  }
+// Subscribe to the theme store
+theme.subscribe(value => {
+    currentTheme = value;
+    document.body.className = currentTheme; // Apply class to body
 });
 
-function toggle() {
-    window.document.body.classList.toggle('dark-mode')
+// Set the initial theme on mount
+onMount(() => {
+    document.body.className = currentTheme;
+});
 
-    if(localStorage.getItem("dark-mode")){
-        localStorage.removeItem("dark-mode")
-        darkMode = false;
-    } else{
-        localStorage.setItem("dark-mode", "1")
-        darkMode = true;
-    }
-}
-
+// Function to toggle theme
+const toggleTheme = () => {
+    theme.set(currentTheme === 'light' ? 'dark' : 'light');
+};
 </script>
 
-{#if darkMode === true}
-    <Button on:click={toggle}
+{#if currentTheme === 'dark'}
+    <Button on:click={toggleTheme}
     class="mx-auto p-2"
     active={false}
     block={false}
@@ -50,7 +41,7 @@ function toggle() {
         <i class="bi bi-moon"></i>
     </Button>
 {:else}
-    <Button on:click={toggle}
+    <Button on:click={toggleTheme}
     class="mx-auto p-2"
     active={false}
     block={false}

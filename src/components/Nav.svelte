@@ -7,10 +7,22 @@
 		Navbar,
 		NavItem,
 		NavLink,
-		Icon
+		Icon,
+		Dropdown,
+		DropdownToggle,
+		DropdownMenu,
+		DropdownItem
     } from '@sveltestrap/sveltestrap';
 	import ToggleDarkMode from '../components/ToggleDarkMode.svelte';
 	import { base } from '$app/paths';
+
+	import {theme} from "../utilities/themeStore";
+
+	let currentTheme:string = 'auto'; // default
+    // Subscribe to the theme store
+    theme.subscribe(value => {
+        currentTheme = value;
+    });
 
 	let isOpen = false;
 
@@ -26,7 +38,15 @@
 	<Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
 	  <Nav  theme="auto"  class="ms-auto d-flex" navbar>
 		<NavItem><NavLink href="{base}/">Home</NavLink></NavItem>
-		<NavItem><NavLink href="{base}/projects">Projects</NavLink></NavItem>
+		<Dropdown nav inNavbar>
+			<DropdownToggle nav caret>Projects</DropdownToggle>
+			<DropdownMenu end>
+				<DropdownItem><NavLink href="{base}/projects">All</NavLink></DropdownItem>
+			  <DropdownItem><NavLink href="{base}/projects/space-ink">Space Ink</NavLink></DropdownItem>
+			  <DropdownItem divider />
+			  <DropdownItem>Reset</DropdownItem>
+			</DropdownMenu>
+		  </Dropdown>
 		<NavItem><ToggleDarkMode /></NavItem>
 	  </Nav>
 	</Collapse>

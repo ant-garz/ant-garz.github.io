@@ -22,23 +22,18 @@
         photo7
     ];
     let activeIndex = 0;
-    let darkMode = false;
-    onMount(() => {
-        const storedValue = localStorage.getItem('dark-mode');
-        if (storedValue && storedValue === "1") {
-            if(!document.body.classList.contains("dark-mode") && storedValue === "1"){
-                document.body.classList.add('dark-mode');
-                // since we add this here and we toggle this here
-                darkMode = true;
-            }
-        }
+    import { theme } from '../utilities/themeStore';
+    let currentTheme:string = 'auto'; // default
+    // Subscribe to the theme store
+    theme.subscribe(value => {
+        currentTheme = value;
     });
 
 </script>
 
 <Nav></Nav>
 
-<container theme="auto">
+<container theme={currentTheme}>
     <h1 class="mx-auto px-5 mt-3">Hello, my name is Anthony Garza <Icon name="triangle-half" /></h1>
     <section class="mx-auto p-5">
         <h2>Professional Background</h2>
