@@ -41,6 +41,12 @@
     <section class="mx-auto p-5">
         <h2>Projects <Icon name="folder-check" /></h2>
         <div class="mx-auto">
+            <p>Welcome to my projects portfolio.</p>
+            <p> I am a developer with experience in both web and software development.</p>
+            <p>My projects reflect a range of skills, focusing on creating functional applications and software solutions. I enjoy solving problems and find joy in the process of programming.</p>
+            <p>A goal of mine is to create meaningful, impactful work that benefits others. However, sometimes creating projects just for fun is a great way to explore new ideas and enhance my skills without the pressure of expectations. Take a look at my work to see my approach and capabilities.</p>
+        </div>
+        <div class="mx-auto">
             <!-- default -->
             <MediaQuery query="(min-width: 1281px)" let:matches>
                 {#if matches}
