@@ -13,6 +13,7 @@
 
 
     import { theme } from '../../utilities/themeStore';
+  import { onMount } from "svelte";
 
     let currentTheme:string = 'auto'; // default
     // Subscribe to the theme store
@@ -26,6 +27,11 @@
      function goToSpaceInk(){
         window.location.href = '/projects/space-ink';
      }
+
+    // Set the initial theme on mount
+    onMount(() => {
+        document.body.className = currentTheme;
+    });
 	
 </script>
 

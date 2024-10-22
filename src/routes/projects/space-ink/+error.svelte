@@ -10,6 +10,12 @@
     theme.subscribe(value => {
         currentTheme = value;
     });
+
+    // Set the initial theme on mount
+    onMount(() => {
+        document.body.className = currentTheme;
+    });
+	
 </script>
 
 <Nav></Nav>

@@ -5,11 +5,17 @@
     import MediaQuery from "../../../components/MediaQuery.svelte";
 
     import { theme } from '../../../utilities/themeStore';
+  import { onMount } from "svelte";
 
     let currentTheme:string = 'auto'; // default
     // Subscribe to the theme store
     theme.subscribe(value => {
         currentTheme = value;
+    });
+
+    // Set the initial theme on mount
+    onMount(() => {
+        document.body.className = currentTheme;
     });
 	
 </script>

@@ -27,7 +27,7 @@
 	let isOpen = false;
 
 	function handleUpdate(event:any) {
-	isOpen = event.detail.isOpen;
+		isOpen = event.detail.isOpen;
 	}
 
   </script>
