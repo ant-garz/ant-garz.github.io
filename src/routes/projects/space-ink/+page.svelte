@@ -35,8 +35,6 @@
                             <div class="mx-auto w-75 d-flex">
                                 <Image class="img-fluid mx-auto w-25" fluid alt="space ink example image" src={spaceInk}></Image>
                             </div>
-
-                            <p class="h4 mt-4"><a rel="external" href="https://github.com/ant-garz/space-ink" target="_blank"><Icon name="github" /> Github repository</a></p>
                         </div>
                     </div>
                 {/if}
@@ -47,7 +45,6 @@
                 <div>
                     <div class="mx-auto px-5 mt-3">
                         <Image class="img-fluid mx-auto" fluid alt="space ink example image" src={spaceInk}></Image>
-                        <p class="h4 mt-4"><a rel="external" href="https://github.com/ant-garz/space-ink" target="_blank"><Icon name="github" /> Github repository</a></p>
                     </div>
                 </div>
                 {/if}
@@ -58,12 +55,28 @@
                 <div>
                     <div class="mx-auto px-5 mt-3">
                         <Image class="img-fluid mx-auto" fluid alt="space ink example image" src={spaceInk}></Image>
-
-                        <p class="h4 mt-4"><a rel="external" href="https://github.com/ant-garz/space-ink" target="_blank"><Icon name="github" /> Github repository</a></p>
                     </div>
                 </div>
                 {/if}
             </MediaQuery>
+
+            <div class="mx-auto px-5 mt-3">
+                <p class="h3 mt-4"><a rel="external" href="https://github.com/ant-garz/space-ink" target="_blank"><Icon name="github" /> Github repository</a></p>
+                <h3>Overview</h3>
+                <p>Space Ink is a programming project that utilizes a 5.65-inch e-Paper Module (F) with a Raspberry Pi Zero 2 W to display the <a rel="external" target="_blank" href="https://apod.nasa.gov/apod/astropix.html">NASA Astronomy Picture of the Day</a> on an e-ink display.</p>
+                <h3>Key features</h3>
+                <ul>
+                    <li>Automated daily retrieval of the Astronomy Photo of the Day.</li>
+                    <li>Image manipulation to fit a designated white frame.</li>
+                    <li>Addition of the photo's title for context.</li>
+                    <li>Scheduled execution using CRON on the Raspberry Pi.</li>
+                </ul>
+                <h3>Technologies used</h3>
+                <ul><li><a href="https://www.waveshare.com/wiki/5.65inch_e-Paper_Module_(F)_Manual#Overview" target="_blank" rel="external" >5.65inch e-Paper Module (F)</a></li></ul>
+                <ul><li><a href="https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/" target="_blank" rel="external" >Raspberry Pi Zero 2 W</a></li></ul>
+                <ul><li>Python for scripting</li></ul>
+                <ul><li><a href="https://api.nasa.gov/" target="_blank" rel="external" >NASA API</a> for image retrieval</li></ul>
+            </div>
         </div>
     </section>
 </container>
