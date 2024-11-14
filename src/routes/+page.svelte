@@ -30,13 +30,61 @@
 
     let canvas: HTMLCanvasElement;
   let ctx: CanvasRenderingContext2D;
-  let scrollArrow: HTMLDivElement;
 
-  // Helper function to generate a random color in RGB format
+  // Helper function to generate a random color in RGB format, with controlled brightness
   function getRandomColor(): string {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
+    const h = Math.floor(Math.random() * 360); // Random Hue (0 to 360)
+    const s = Math.floor(Math.random() * 30) + 50; // Saturation (50% to 80%)
+    const l = Math.floor(Math.random() * 20) + 40; // Lightness (40% to 60%)
+
+    // Convert HSL to RGB
+    return hslToRgb(h, s, l);
+  }
+
+  // Function to convert HSL to RGB
+  function hslToRgb(h: number, s: number, l: number): string {
+    s /= 100;
+    l /= 100;
+
+    const c = (1 - Math.abs(2 * l - 1)) * s;
+    const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+    const m = l - c / 2;
+
+    let r = 0,
+      g = 0,
+      b = 0;
+
+    if (0 <= h && h < 60) {
+      r = c;
+      g = x;
+      b = 0;
+    } else if (60 <= h && h < 120) {
+      r = x;
+      g = c;
+      b = 0;
+    } else if (120 <= h && h < 180) {
+      r = 0;
+      g = c;
+      b = x;
+    } else if (180 <= h && h < 240) {
+      r = 0;
+      g = x;
+      b = c;
+    } else if (240 <= h && h < 300) {
+      r = x;
+      g = 0;
+      b = c;
+    } else {
+      r = c;
+      g = 0;
+      b = x;
+    }
+
+    // Convert to RGB values in the range [0, 255]
+    r = Math.round((r + m) * 255);
+    g = Math.round((g + m) * 255);
+    b = Math.round((b + m) * 255);
+
     return `rgb(${r}, ${g}, ${b})`;
   }
 
@@ -48,18 +96,14 @@
 
   // Function to create and draw the gradient
   function drawGradient() {
-    // Create a gradient from left to right
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
 
-    // Apply gradual color blending
     const color1 = lerpColor(gradientStart, gradientEnd, transitionProgress);
     const color2 = lerpColor(gradientEnd, gradientStart, 1 - transitionProgress);
 
-    // Set the gradient colors
     gradient.addColorStop(0, color1);
     gradient.addColorStop(1, color2);
 
-    // Fill the canvas with the gradient
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
@@ -69,7 +113,6 @@
     const rgb1 = color1.match(/\d+/g)!.map(Number);
     const rgb2 = color2.match(/\d+/g)!.map(Number);
 
-    // Linear interpolation between two colors
     const r = Math.round(rgb1[0] + (rgb2[0] - rgb1[0]) * t);
     const g = Math.round(rgb1[1] + (rgb2[1] - rgb1[1]) * t);
     const b = Math.round(rgb1[2] + (rgb2[2] - rgb1[2]) * t);
@@ -80,15 +123,13 @@
   // Function to smoothly transition the colors over time
   function transitionColors(currentTime: number) {
     if (transitionProgress >= 1) {
-      // Generate new random colors for the next transition
       gradientStart = getRandomColor();
       gradientEnd = getRandomColor();
       transitionProgress = 0; // Reset the transition progress
     }
 
-    // Calculate time-based progress to smoothly transition over time
     const deltaTime = currentTime - previousTime;
-    const transitionSpeed = 0.00009; // Adjusted to a slower value
+    const transitionSpeed = 0.00005;
 
     transitionProgress += deltaTime * transitionSpeed;
 
@@ -105,7 +146,6 @@
     drawGradient(); // Draw the new gradient with the interpolated colors
     requestAnimationFrame(animate); // Request the next frame
   }
-
 
     // Set the initial theme on mount
     onMount(() => {
@@ -135,7 +175,7 @@
 
         <!-- Text content that will be displayed above the canvas -->
         <div class="hero-text">
-            <h1 class="mx-auto px-5 mt-3">Hello, my name is Anthony Garza <Icon name="triangle-half" /></h1>
+            <h1 class="mx-auto px-5 mt-3">Hello, my name is Anthony Garza <Icon name="person-workspace" /></h1>
             <div bind:this={scrollArrow} class="scroll-arrow">
                 <h1 class="mt-3"><Icon name="arrow-down-circle" /></h1>
             </div>
