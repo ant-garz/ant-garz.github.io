@@ -2,14 +2,13 @@
     import { Icon, Carousel, CarouselControl, CarouselItem, CarouselIndicators } from "@sveltestrap/sveltestrap";
     import { onMount } from 'svelte';
     import Nav from "../components/Nav.svelte";
-    import MediaQuery from "../components/MediaQuery.svelte";
-    import photo1 from '$lib/assets/photo1.jpg';
-    import photo2 from '$lib/assets/photo2.jpg';
-    import photo3 from '$lib/assets/photo3.jpg';
-    import photo4 from '$lib/assets/photo4.jpg';
-    import photo5 from '$lib/assets/photo5.jpg';
-    import photo6 from '$lib/assets/photo6.jpg';
-    import photo7 from '$lib/assets/photo7.jpg';
+    import photo1 from '$lib/assets/photo1.jpg?enhanced';
+    import photo2 from '$lib/assets/photo2.jpg?enhanced';
+    import photo3 from '$lib/assets/photo3.jpg?enhanced';
+    import photo4 from '$lib/assets/photo4.jpg?enhanced';
+    import photo5 from '$lib/assets/photo5.jpg?enhanced';
+    import photo6 from '$lib/assets/photo6.jpg?enhanced';
+    import photo7 from '$lib/assets/photo7.jpg?enhanced';
     import resume from '$lib/assets/resume.pdf';
 
     const items = [
@@ -61,94 +60,51 @@
 
     <section class="mx-auto p-5">
         <h2>Personal Background</h2>
-        <h3>Music</h3>
         <div class="mx-auto">
+            <h3>Music</h3>
             <p>I enjoy music and enjoy spending time playing songs on guitar and bass.</p>
             <p>Here are some songs that I have been listening to recently:</p>
-            <!-- default -->
-            <MediaQuery query="(min-width: 1281px)" let:matches>
-                {#if matches}
-                <div class="mx-auto w-75 px-5 mt-3">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EpsmOwbl4tnBg?utm_source=generator&theme=0" width="100%" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="container mt-4">
+                <div class="ratio ratio-16x9 mx-auto">
+                    <iframe
+                        style="border-radius: 12px"
+                        src="https://open.spotify.com/embed/playlist/37i9dQZF1EpsmOwbl4tnBg?utm_source=generator&theme=0"
+                        frameborder="0"
+                        allowfullscreen
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy">
+                    </iframe>
                 </div>
-                {/if}
-            </MediaQuery>
-            <!-- tablet -->
-            <MediaQuery query="(min-width: 481px) and (max-width: 1280px)" let:matches>
-                {#if matches}
-                <div class="mx-auto w-75 px-5 mt-3">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EpsmOwbl4tnBg?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-                {/if}
-            </MediaQuery>
-            <!-- mobile -->
-            <MediaQuery query="(max-width: 480px)" let:matches>
-                {#if matches}
-                <div class="mx-auto">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EpsmOwbl4tnBg?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-                {/if}
-            </MediaQuery>
+            </div>
         </div>
+    </section>
 
-        <h3>Photography</h3>
-        <div class="mx-auto px-5 mt-3">
+    <section class="mx-auto p-5">
+        <div>
+            <h3>Photography</h3>
             <p>I also enjoy photography as a hobby. Here are some photos I took recently.</p>
-            <!-- default -->
-            <MediaQuery query="(min-width: 1281px)" let:matches>
-                {#if matches}
-                    <div class="d-flex justify-content-center w-50 align-center mx-auto">
-                        <Carousel {items} bind:activeIndex>
-                            <CarouselIndicators bind:activeIndex {items} />
-                            <div class="carousel-inner ">
-                                {#each items as item, index}
-                                <CarouselItem bind:activeIndex itemIndex={index}>
-                                    <img src={item} class="img-fluid" alt="{item} {index + 1}" style="height: 100%; object-fit: cover;"  />
-                                </CarouselItem>
-                                {/each}
-                            </div>
-                            <CarouselControl direction="prev" bind:activeIndex {items} />
-                            <CarouselControl direction="next" bind:activeIndex {items} />
-                        </Carousel>
-                    </div>
-                {/if}
-            </MediaQuery>
-            <!-- tablet -->
-            <MediaQuery query="(min-width: 481px) and (max-width: 1280px)" let:matches>
-                {#if matches}
-                <div class="d-flex justify-content-center w-75 align-center mx-auto">
-                    <Carousel {items} bind:activeIndex>
-                        <CarouselIndicators bind:activeIndex {items} />
-                        <div class="carousel-inner ">
-                            {#each items as item, index}
-                            <CarouselItem bind:activeIndex itemIndex={index}>
-                                <img src={item} class="img-fluid" alt="{item} {index + 1}" style="height: 100%; object-fit: cover;"  />
-                            </CarouselItem>
-                            {/each}
-                        </div>
-                        <CarouselControl direction="prev" bind:activeIndex {items} />
-                        <CarouselControl direction="next" bind:activeIndex {items} />
-                    </Carousel>
-                </div>
-                {/if}
-            </MediaQuery>
-            <!-- mobile -->
-            <MediaQuery query="(max-width: 480px)" let:matches>
-                {#if matches}
+            <div class="container">
                 <Carousel {items} bind:activeIndex>
                     <CarouselIndicators bind:activeIndex {items} />
-                    <div class="carousel-inner ">
+                    <div class="carousel-inner">
                         {#each items as item, index}
                         <CarouselItem bind:activeIndex itemIndex={index}>
-                            <img src={item} class="img-fluid " alt="{item} {index + 1}" style="height: 250px; width:100%; object-fit: cover;"/>
+                          <div class="position-relative d-flex justify-content-center align-items-center">
+                            <!-- Image container with Bootstrap classes to maintain aspect ratio -->
+                            <enhanced:img
+                              src={item}
+                              alt="photo {index + 1}"
+                              class="img-fluid"
+                              sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
+                            />
+                          </div>
                         </CarouselItem>
-                        {/each}
+                      {/each}
                     </div>
                     <CarouselControl direction="prev" bind:activeIndex {items} />
                     <CarouselControl direction="next" bind:activeIndex {items} />
                 </Carousel>
-                {/if}
-            </MediaQuery>
+            </div>
         </div>
     </section>
 </container>

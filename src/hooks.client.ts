@@ -8,5 +8,5 @@ export const handleError: HandleClientError = async ({
   message,
 }) => {
   const errorId = crypto.randomUUID();
-  return { message: "Whoops!", errorId };
+  return { message: "Something went wrong", errorId };
 };
