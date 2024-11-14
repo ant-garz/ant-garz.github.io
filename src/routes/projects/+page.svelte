@@ -54,7 +54,7 @@
                     </CardHeader>
                     <CardBody>
                         <Image class="img-fluid mx-auto" fluid alt="space ink example image" src={spaceInk}></Image>
-                        <CardText>A project that shows the NASA astronomy picture of the day and displays it on an e-paper module connected to a raspberry pi.</CardText>
+                        <CardText class="mt-3">A project that shows the NASA astronomy picture of the day and displays it on an e-paper module connected to a raspberry pi.</CardText>
                         <Button on:click={goToSpaceInk}>view</Button>
                     </CardBody>
                 </Card>
