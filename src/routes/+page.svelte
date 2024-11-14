@@ -101,8 +101,8 @@
                         </CarouselItem>
                       {/each}
                     </div>
-                    <CarouselControl direction="prev" bind:activeIndex {items} />
-                    <CarouselControl direction="next" bind:activeIndex {items} />
+                    <CarouselControl direction="prev" id="prev" bind:activeIndex {items} />
+                    <CarouselControl direction="next" id="next" bind:activeIndex {items} />
                 </Carousel>
             </div>
         </div>
