@@ -177,10 +177,10 @@
   });
 
   if(browser){
-  // Reactive variable for window width
-  width = window.innerWidth;
-  // You can define a mobile breakpoint (e.g., 768px)
-  isMobile = width <= 768;
+    // Reactive variable for window width
+    width = window.innerWidth;
+    // You can define a mobile breakpoint (e.g., 768px)
+    isMobile = width <= 500;
   }
 
   // Update width on resize
@@ -226,24 +226,22 @@
         </div>
     </section>
 
-    <section class="mx-auto px-5">
+    <section class="mx-auto px-5 mt-3">
         <h2>Personal Background</h2>
         <div class="mx-auto">
             <h3>Music</h3>
             <p>I enjoy music and enjoy spending time playing songs on guitar and bass.</p>
             <p>Here are some songs that I have been listening to recently:</p>
-            <div class="mt-4">
-                <div class="ratio {isMobile ? 'ratio-1x1' : 'ratio-16x9'} mx-auto">
-                    <iframe
-                        title="on repeat playlist embed"
-                        style="border-radius: 12px"
-                        src="https://open.spotify.com/embed/playlist/37i9dQZF1EpsmOwbl4tnBg?utm_source=generator&theme=0"
-                        frameborder="0"
-                        allowfullscreen
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy">
-                    </iframe>
-                </div>
+            <div class="mt-4 ratio {isMobile ? 'ratio-1x1' : 'ratio-4x3 mx-auto w-75'}">
+              <iframe
+                title="on repeat playlist embed"
+                style="border-radius: 12px;"
+                src="https://open.spotify.com/embed/playlist/37i9dQZF1EpsmOwbl4tnBg?utm_source=generator&theme=0"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+              </iframe>
             </div>
         </div>
     </section>
