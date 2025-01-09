@@ -1,8 +1,27 @@
 <script lang="ts">
-    import { Icon, Button  } from "@sveltestrap/sveltestrap";
+    import { Icon, Carousel, CarouselControl, CarouselItem, CarouselIndicators } from "@sveltestrap/sveltestrap";
     import { onMount, onDestroy } from 'svelte';
-    import Nav from "../components/Nav.svelte";
-    import { theme } from '../utilities/themeStore';
+    import Nav from "../../components/Nav.svelte";
+    import photo1 from '$lib/assets/photo1.jpg?enhanced';
+    import photo2 from '$lib/assets/photo2.jpg?enhanced';
+    import photo3 from '$lib/assets/photo3.jpg?enhanced';
+    import photo4 from '$lib/assets/photo4.jpg?enhanced';
+    import photo5 from '$lib/assets/photo5.jpg?enhanced';
+    import photo6 from '$lib/assets/photo6.jpg?enhanced';
+    import photo7 from '$lib/assets/photo7.jpg?enhanced';
+    import resume from '$lib/assets/resume.pdf';
+
+    const items = [
+        photo1,
+        photo2,
+        photo3,
+        photo4,
+        photo5,
+        photo6,
+        photo7
+    ];
+    let activeIndex = 0;
+    import { theme } from '../../utilities/themeStore';
     import { browser } from "$app/environment";
     let currentTheme:string = 'auto'; // default
     // Subscribe to the theme store
@@ -169,69 +188,76 @@
   width = window.innerWidth;
   };
 
-  function handleClick() {
-        window.location.href = "/main";
-  }
 </script>
 
 <Nav></Nav>
 
-<container theme={currentTheme} >
+<section class="mx-auto px-5 mt-5">
+    <h2 class="mt-2">Professional Background</h2>
+    <p>With professional experience as both a Software QA Analyst and a Software Developer, I bring hands-on knowledge of agile methodologies and the software development life cycle.</p>
+    <p>Outside of work, my passion for technology continues to drive me to learn more. I enjoy working on personal projects with Arduino micro controllers and Raspberry Pi computers, which helps me stay enthusiastic about my field and current with emerging technologies.</p>
 
-    <!-- Canvas element for the background -->
-    <div class="hero-container" id='container'>
-        <canvas bind:this={canvas} width="100%" height="100vh" class="hero-canvas"></canvas>
+    <h3>Experience</h3>
+    <ul>
+        <li>Software Development</li>
+        <li>Software Quality Assurance</li>
+    </ul>
+    
+    <h3>Stay Connected</h3>
+    <div class="mx-auto px-5 mt-3">
+        <p class="h4 mt-4"><a href={resume} target="_blank" rel="noopener noreferrer"><Icon name="file-earmark-text-fill" /> View My Resume</a></p>
+        <p class="h4 mt-4"><a rel="external" href="https://www.linkedin.com/in/anthony-garza/" target="_blank"><Icon name="linkedin" /> Linkedin Profile</a></p>
+        <p class="h4 mt-4"><a rel="external" href="https://github.com/ant-garz" target="_blank"><Icon name="github" /> Github Profile</a></p>
+    </div>
+</section>
 
-        <!-- Text content that will be displayed above the canvas -->
-        <div class="hero-text">
-            <h1 class="mx-auto px-5 mt-3">Hello, my name is Anthony Garza <Icon name="person-workspace" /></h1>
-            <div class="scroll-arrow">
-                <h1 class="mt-5"> <Button color="primary" on:click={() => handleClick()}>click to enter <Icon name="door-open" /></Button> </h1>
-            </div>
+<section class="mx-auto px-5 mt-3">
+    <h2>Personal Background</h2>
+    <div class="mx-auto">
+        <h3>Music</h3>
+        <p>I enjoy music and enjoy spending time playing songs on guitar and bass.</p>
+        <p>Here are some songs that I have been listening to recently:</p>
+        <div class="mt-4 ratio {isMobile ? 'ratio-1x1' : 'ratio-4x3 mx-auto w-75'}">
+          <iframe
+            title="on repeat playlist embed"
+            style="border-radius: 12px;"
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1EpsmOwbl4tnBg?utm_source=generator&theme=0"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
         </div>
     </div>
+</section>
 
-</container>
+<section class="mx-auto px-5 mb-5">
+  <h3>Photography</h3>
+  <p>I also enjoy photography as a hobby. Here are some photos I took recently.</p>
+  <div class="container">
+      <Carousel {items} bind:activeIndex>
+          <CarouselIndicators bind:activeIndex {items} />
+          <div class="carousel-inner">
+              {#each items as item, index}
+              <CarouselItem bind:activeIndex itemIndex={index}>
+                <div class="position-relative d-flex justify-content-center align-items-center">
+                  <!-- Image container with Bootstrap classes to maintain aspect ratio -->
+                  <enhanced:img
+                    src={item}
+                    alt="photo {index + 1}"
+                    class="img-fluid"
+                    sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
+                  />
+                </div>
+              </CarouselItem>
+            {/each}
+          </div>
+          <CarouselControl direction="prev" id="prev" bind:activeIndex {items} />
+          <CarouselControl direction="next" id="next" bind:activeIndex {items} />
+      </Carousel>
+  </div>
+</section>
 
 <style>
-    @import "../style.css";
-
-  /* Hero Section (Background Canvas) */
-  .hero-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    padding-top: 60px; /* Space for fixed navbar */
-  }
-
-  .hero-canvas {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Full height of the viewport */
-    z-index: 1; /* Ensure the canvas is behind the text */
-  }
-
-  .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    z-index: 2; /* Ensure the text is above the canvas */
-  }
-
-  .hero-text h1 {
-    font-size: 3rem;
-    margin: 0;
-  }
-
-  .hero-text p {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-  }
-
+        @import "../../style.css";
 </style>

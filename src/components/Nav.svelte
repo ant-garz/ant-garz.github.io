@@ -33,8 +33,6 @@
 		  <DropdownMenu end>
 			<DropdownItem><NavLink href="{base}/projects">All</NavLink></DropdownItem>
 			<DropdownItem><NavLink href="{base}/projects/space-ink">Space Ink</NavLink></DropdownItem>
-			<DropdownItem divider />
-			<DropdownItem>Reset</DropdownItem>
 		  </DropdownMenu>
 		</Dropdown>
   
