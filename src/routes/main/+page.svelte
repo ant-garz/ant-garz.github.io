@@ -194,14 +194,27 @@
 
 <section class="mx-auto px-5 mt-5">
     <h2 class="mt-2">Professional Background</h2>
-    <p>With professional experience as both a Software QA Analyst and a Software Developer, I bring hands-on knowledge of agile methodologies and the software development life cycle.</p>
-    <p>Outside of work, my passion for technology continues to drive me to learn more. I enjoy working on personal projects with Arduino micro controllers and Raspberry Pi computers, which helps me stay enthusiastic about my field and current with emerging technologies.</p>
+
+    <p>I am a software developer with experience in full-stack development, specializing in Laravel or Slim PHP for back-end and Svelte or Vue for front-end development.</p>
+    <p>Proficient in JavaScript, PHP, HTML, CSS, and Python, I have hands-on experience working in agile environments and throughout the software development lifecycle.</p>
+    <p>Passionate about building software, I continuously explore new technologies to stay current and enhance development.</p>
+    <p>I am currently pursuing a degree in Cybersecurity. In my role as a software developer, I integrate security best practices into the development process, ensuring that web applications are robust and resistant to vulnerabilities.</p>
 
     <h3>Experience</h3>
     <ul>
         <li>Software Development</li>
         <li>Software Quality Assurance</li>
     </ul>
+
+    <h3>Skills and technologies</h3>
+    <ul>
+      <li><strong>Software Development:</strong> Full stack, front end, back end, web development, scripting</li>
+      <li><strong>Software Quality Assurance & Testing:</strong> Manual software testing, automated software testing (Selenium), performance testing (JMeter)</li>
+      <li><strong>Programming Languages:</strong> PHP, Python, Javascript/Typescript, Java, SQL</li>
+      <li><strong>Programming Frameworks:</strong> Slim PHP, Laravel, Svelte, React, Vue</li>
+      <li><strong>Development Tools:</strong> Bitbucket, git, AWS (S3, EC2, RDS), JIRA, MySQL Workbench, SQL Server Management Studio, VSCode</li>
+      <li><strong>Development Methodologies:</strong> Agile Scrum & Kanban, Waterfall</li>
+  </ul>
     
     <h3>Stay Connected</h3>
     <div class="mx-auto px-5 mt-3">
