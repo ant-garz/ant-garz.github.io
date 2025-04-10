@@ -198,7 +198,7 @@
     <p>I am a software developer with experience in full-stack development, specializing in Laravel or Slim PHP for back-end and Svelte or Vue for front-end development.</p>
     <p>Proficient in JavaScript, PHP, HTML, CSS, and Python, I have hands-on experience working in agile environments and throughout the software development lifecycle.</p>
     <p>Passionate about building software, I continuously explore new technologies to stay current and enhance development.</p>
-    <p>I am currently pursuing a associate's degree in Cybersecurity. In my role as a software developer, I integrate security best practices into the development process, ensuring that web applications are robust and resistant to vulnerabilities.</p>
+    <p>I am currently pursuing an associate's degree in Cybersecurity. In my role as a software developer, I integrate security best practices into the development process, ensuring that web applications are robust and resistant to vulnerabilities.</p>
 
     <h3>Experience</h3>
     <ul>
