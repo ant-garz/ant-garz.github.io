@@ -1,11 +1,11 @@
 :global(body) {
-    background-color: #f2eee2;
+    background-color: #f0f0f0;
     color: black;
     
 }
 :global(body.dark) {
-    background-color: #1d3040;
-    color: #bfc2c7;
+    background-color: #2a2a2a;
+    color: #f0f0f0;
 }
 
 :global(body) a {
@@ -13,5 +13,5 @@
   }
 
   :global(body.dark) a {
-    color: #bfc2c7;
+    color: #f0f0f0;
 }
