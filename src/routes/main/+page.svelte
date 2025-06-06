@@ -1,7 +1,5 @@
 <script lang="ts">
-  import {
-    Icon,
-  } from "@sveltestrap/sveltestrap";
+  import { Icon } from "@sveltestrap/sveltestrap";
   import { onMount, onDestroy } from "svelte";
   import Nav from "../../components/Nav.svelte";
   import photo1 from "$lib/assets/photo1.jpg?enhanced";
@@ -11,12 +9,18 @@
   import photo5 from "$lib/assets/photo5.jpg?enhanced";
   import photo6 from "$lib/assets/photo6.jpg?enhanced";
   import photo7 from "$lib/assets/photo7.jpg?enhanced";
+  import photo8 from "$lib/assets/photo8.jpg?enhanced";
+  import photo9 from "$lib/assets/photo9.jpg?enhanced";
   import resume from "$lib/assets/resume.pdf";
 
   import { theme } from "../../utilities/themeStore";
 
   import Gallery from "$lib/Gallery.svelte";
   let currentTheme: string = "auto"; // default
+  import { browser } from "$app/environment";
+  // used for updating ratio on spotify iframe div
+  let width: number;
+  let isMobile: boolean = false;
   // Subscribe to the theme store
   theme.subscribe((value) => {
     currentTheme = value;
@@ -27,6 +31,13 @@
     document.body.className = currentTheme;
   });
 
+  if(browser){
+    // Reactive variable for window width
+    width = window.innerWidth;
+    // You can define a mobile breakpoint (e.g., 768px)Add commentMore actions
+    isMobile = width <= 500;
+  }
+
   const galleryImages = [
     { src: photo1.img.src, title: "waterfall" },
     { src: photo2.img.src, title: "river and mountains" },
@@ -35,6 +46,8 @@
     { src: photo5.img.src, title: "horses" },
     { src: photo6.img.src, title: "hike" },
     { src: photo7.img.src, title: "mountain highway" },
+    { src: photo8.img.src, title: "Sheep" },
+    { src: photo9.img.src, title: "Puffin" },
   ];
 </script>
 
@@ -127,7 +140,7 @@
       I enjoy music and enjoy spending time playing songs on guitar and bass.
     </p>
     <p>Here are some songs that I have been listening to recently:</p>
-    <div class="mt-4 ratio ratio-4x3 mx-auto w-75">
+    <div class="mt-4 ratio {isMobile ? 'ratio-1x1' : 'ratio-4x3 mx-auto w-75'}">
       <iframe
         title="on repeat playlist embed"
         style="border-radius: 12px;"

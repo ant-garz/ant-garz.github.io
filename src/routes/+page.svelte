@@ -44,7 +44,7 @@
           p.ellipsoid(150, 100, 140);
           break;
         case 'cylinder':
-          p.cylinder(300, 500);
+          p.cylinder(200, 300);
           break;
       }
     };
