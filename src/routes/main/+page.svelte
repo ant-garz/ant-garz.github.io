@@ -11,6 +11,7 @@
   import photo7 from "$lib/assets/photo7.jpg?enhanced";
   import photo8 from "$lib/assets/photo8.jpg?enhanced";
   import photo9 from "$lib/assets/photo9.jpg?enhanced";
+  import photo10 from "$lib/assets/photo10.jpg?enhanced";
   import resume from "$lib/assets/resume.pdf";
 
   import { theme } from "../../utilities/themeStore";
@@ -48,6 +49,7 @@
     { src: photo7.img.src, title: "mountain highway" },
     { src: photo8.img.src, title: "Sheep" },
     { src: photo9.img.src, title: "Puffin" },
+    { src: photo10.img.src, title: "train"}
   ];
 </script>
 
