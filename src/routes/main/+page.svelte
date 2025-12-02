@@ -64,7 +64,7 @@
     front-end development.
   </p>
   <p>
-    Proficient in JavaScript, PHP, HTML, CSS, and Python, I have hands-on
+    I have experience working with JavaScript/Typescript, PHP, HTML, CSS, and Python, I have hands-on
     experience working in agile environments and throughout the software
     development lifecycle.
   </p>
