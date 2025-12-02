@@ -88,7 +88,6 @@
   <ModalBody class="text-center">
     {#if selectedImage}
       <img src={selectedImage.src} alt={selectedImage.title} class="modal-img" />
-      <p class="mt-2">{selectedImage.title}</p>
     {/if}
   </ModalBody>
 </Modal>

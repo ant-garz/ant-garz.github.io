@@ -73,11 +73,7 @@
     to stay current and enhance development.
   </p>
   <p>
-    I am currently pursuing an associate's degree in Cybersecurity. In my role
-    as a software developer, I integrate security best practices into the
-    development process, ensuring that web applications are robust and resistant
-    to vulnerabilities.
-  </p>
+    I am currently pursuing an associate's degree in Cybersecurity.</p>
 
   <h3>Experience</h3>
   <ul>
