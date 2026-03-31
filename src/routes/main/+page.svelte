@@ -64,7 +64,7 @@
     front-end development.
   </p>
   <p>
-    Proficient in JavaScript, PHP, HTML, CSS, and Python, I have hands-on
+    I have experience working with JavaScript/Typescript, PHP, HTML, CSS, and Python, I have hands-on
     experience working in agile environments and throughout the software
     development lifecycle.
   </p>
@@ -72,8 +72,10 @@
     Passionate about building software, I continuously explore new technologies
     to stay current and enhance development.
   </p>
-  <p>
-    I am currently pursuing an associate's degree in Cybersecurity.</p>
+  <p>I am currently pursuing an associate's degree in Cybersecurity from Waubonsee Community College, as I would like to reinfoce my foundational knowledge.</p>
+  <p>I graduated with an associate's degrees in Computer Science from Waubonsee Community College in 2018.</p>
+  <p>I graduated with a bachelor's degree in Computer Science from Lewis University in 2020.</p>
+  <p>My academic goal is to attain a master's degree in computer science or another related field, and my personal goal is to have fun learning and making new things</p>
 
   <h3>Experience</h3>
   <ul>
