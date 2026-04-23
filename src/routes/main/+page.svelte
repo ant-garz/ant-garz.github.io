@@ -59,23 +59,8 @@
   <h2 class="mt-2">Professional Background</h2>
 
   <p>
-    I am a software developer with experience in full-stack development,
-    specializing in Laravel or Slim PHP for back-end and Svelte or Vue for
-    front-end development.
+    Software developer with full-stack web development experience. Strong in JavaScript and PHP, with additional experience in Python, HTML, and CSS. Background in software testing and development, with a focus on building applications in agile environments. Currently pursuing an associate’s degree in Cybersecurity.
   </p>
-  <p>
-    I have experience working with JavaScript/Typescript, PHP, HTML, CSS, and Python, I have hands-on
-    experience working in agile environments and throughout the software
-    development lifecycle.
-  </p>
-  <p>
-    Passionate about building software, I continuously explore new technologies
-    to stay current and enhance development.
-  </p>
-  <p>I am currently pursuing an associate's degree in Cybersecurity from Waubonsee Community College, as I would like to reinfoce my foundational knowledge.</p>
-  <p>I graduated with an associate's degrees in Computer Science from Waubonsee Community College in 2018.</p>
-  <p>I graduated with a bachelor's degree in Computer Science from Lewis University in 2020.</p>
-  <p>My academic goal is to attain a master's degree in computer science or another related field, and my personal goal is to have fun learning and making new things</p>
 
   <h3>Experience</h3>
   <ul>
@@ -90,23 +75,19 @@
       development, scripting
     </li>
     <li>
-      <strong>Software Quality Assurance & Testing:</strong> Manual software testing,
-      automated software testing (Selenium)
+      <strong>Software Quality Assurance & Testing:</strong> Manual software testing, automated software testing (Selenium)
     </li>
     <li>
-      <strong>Programming Languages:</strong> PHP, Python, Javascript/Typescript,
-      Java, SQL
+      <strong>Programming Languages:</strong> PHP, Python, Javascript/Typescript, Java, SQL
     </li>
     <li>
-      <strong>Programming Frameworks:</strong> Slim PHP, Laravel, Svelte, React,
-      Vue
+      <strong>Programming Frameworks:</strong> Slim PHP, Laravel, Svelte, React, Vue
     </li>
     <li>
-      <strong>Development Tools:</strong> Bitbucket, git, AWS (S3, EC2, RDS), JIRA,
-      MySQL Workbench, SQL Server Management Studio, VSCode
+      <strong>Development Tools:</strong> Bitbucket, git, AWS (S3, EC2. RDS), JIRA, MySql Workbench, Sql Server Management Studio, VsCode, Github Copilot
     </li>
     <li>
-      <strong>Development Methodologies:</strong> Agile Scrum & Kanban, Waterfall
+      <strong>Development Methodologies:</strong> Agile (Scrum, Kanban), Waterfall
     </li>
   </ul>
 
