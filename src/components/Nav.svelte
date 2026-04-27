@@ -33,6 +33,7 @@
 		  <DropdownMenu end>
 			<DropdownItem><NavLink href="{base}/projects">All</NavLink></DropdownItem>
 			<DropdownItem><NavLink href="{base}/projects/space-ink">Space Ink</NavLink></DropdownItem>
+			<DropdownItem><NavLink href="{base}/projects/daily-drives">Daily Drives</NavLink></DropdownItem>
 		  </DropdownMenu>
 		</Dropdown>
   

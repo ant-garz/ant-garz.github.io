@@ -9,6 +9,8 @@
     CardTitle  } from "@sveltestrap/sveltestrap";
 	import Nav from "../../components/Nav.svelte";
     import spaceInk from '$lib/assets/space-ink.jpg';
+    import dailyDrive from '$lib/assets/blurred-example.gif';
+
 
 
     import { theme } from '../../utilities/themeStore';
@@ -25,6 +27,10 @@
      */
      function goToSpaceInk(){
         window.location.href = '/projects/space-ink';
+     }
+
+     function goToDailyDrives(){
+        window.location.href = '/projects/daily-drives';
      }
 
     // Set the initial theme on mount
@@ -47,15 +53,24 @@
         </div>
         <div class="container ">
             <div >
-                <!-- space ink card -->
                 <Card class="mx-auto w-75" theme={currentTheme}>
                     <CardHeader>
                         <CardTitle>Space Ink</CardTitle>
                     </CardHeader>
                     <CardBody>
-                        <Image class="img-fluid mx-auto" fluid alt="space ink example image" src={spaceInk}></Image>
+                        <Image class="mx-auto" fluid alt="space ink example image" src={spaceInk}></Image>
                         <CardText class="mt-3">A project that shows the NASA astronomy picture of the day and displays it on an e-paper module connected to a raspberry pi.</CardText>
-                        <Button on:click={goToSpaceInk}>view</Button>
+                        <Button on:click={goToSpaceInk}>View</Button>
+                    </CardBody>
+                </Card>
+                <Card class="mx-auto w-75 mt-5" theme={currentTheme}>
+                    <CardHeader>
+                        <CardTitle>Daily Drive</CardTitle>
+                    </CardHeader>
+                    <CardBody>
+                        <Image class="mx-auto w-100" fluid alt="daily drives example gif" src={dailyDrive}></Image>
+                        <CardText class="mt-3">A project that takes dash cam footage from a folder and stitches videos from 1 selected day into a "drive of the day", with an optional privacy filter.</CardText>
+                        <Button on:click={goToDailyDrives}>View</Button>
                     </CardBody>
                 </Card>
             </div>

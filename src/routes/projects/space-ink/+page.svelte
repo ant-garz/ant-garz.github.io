@@ -29,7 +29,7 @@
             <div>
                 <div class="mx-auto px-5 mt-3">
                     <div class="mx-auto w-75">
-                        <Image class="img-fluid" fluid alt="space ink example image" src={spaceInk}></Image>
+                        <Image fluid alt="space ink example image" src={spaceInk}></Image>
                     </div>
                 </div>
             </div>
